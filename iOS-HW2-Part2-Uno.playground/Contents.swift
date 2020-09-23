@@ -14,7 +14,6 @@ import UIKit
 
 //: ![Uno Deck](deck.jpg)
 
-
 /*:
  ### المطلوب:
 #### الجزء الأول:
@@ -88,18 +87,45 @@ var wild_Draw = UIImage(named: "Wild_Draw.png")
 /// قم بإنشاء الستركت هنا
 
 // struct ...
+struct Card{
+    var color: String
+    var number: Int
+    
+    func imageName() -> String {
+        return"\(color)_\(number).png"
+    }
+}
 
+var cards: [Card] = []
+var colors = ["Yellow", "Red", "Green", "Blue"]
+for _ in 1...2 {
+    for color in colors {
+        for i in 1...9 {
+            cards.append(Card(color: color, number: i))
+        }
+    }
+}
 
-
-
+//var cardRed = [Card(color: "red" , number: 0) , Card(color: "red", number: 1) , Card(color: "red", number: 1) , Card(color: "red", number: 2) , Card(color: "red", number: 2) , Card(color: "red", number: 3) , Card(color: "red", number: 3) , Card(color: "red", number: 4) , Card(color: "red", number: 4) , Card(color: "red", number: 5) , Card(color: "red", number: 5) , Card(color: "red", number: 6) , Card(color: "red", number: 6) , Card(color: "red", number: 7) , Card(color: "red", number: 7) , Card(color: "red", number: 8) , Card(color: "red", number: 8) , Card(color: "red", number: 9) , Card(color: "red", number: 9)]
+//
+//
+//var cardYellow = [Card(color: "yellow" , number: 0) , Card(color: "yellow", number: 1) , Card(color: "yellow", number: 1) , Card(color: "yellow", number: 2) , Card(color: "yellow", number: 2) , Card(color: "yellow", number: 3) , Card(color: "yellow", number: 3) , Card(color: "yellow", number: 4) , Card(color: "yellow", number: 4) , Card(color: "yellow", number: 5) , Card(color: "yellow", number: 5) , Card(color: "yellow", number: 6) , Card(color: "yellow", number: 6) , Card(color: "yellow", number: 7) , Card(color: "yellow", number: 7) , Card(color: "yeelow", number: 8) , Card(color: "yellow", number: 8) , Card(color: "yellow", number: 9) , Card(color: "yellow", number: 9)]
+//
+//
+//var cardGreen = [Card(color: "green" , number: 0) , Card(color: "green", number: 1) , Card(color: "green", number: 1) , Card(color: "green", number: 2) , Card(color: "green", number: 2) , Card(color: "green", number: 3) , Card(color: "green", number: 3) , Card(color: "green", number: 4) , Card(color: "green", number: 4) , Card(color: "green", number: 5) , Card(color: "green", number: 5) , Card(color: "green", number: 6) , Card(color: "green", number: 6) , Card(color: "green", number: 7) , Card(color: "green", number: 7) , Card(color: "green", number: 8) , Card(color: "green", number: 8) , Card(color: "green", number: 9) , Card(color: "green", number: 9)]
+//
+//
+//
+//var cardBlue = [Card(color: "blue" , number: 0) , Card(color: "blue", number: 1) , Card(color: "blue", number: 1) , Card(color: "blue", number: 2) , Card(color: "blue", number: 2) , Card(color: "blue", number: 3) , Card(color: "blue", number: 3) , Card(color: "blue", number: 4) , Card(color: "blue", number: 4) , Card(color: "blue", number: 5) , Card(color: "blue", number: 5) , Card(color: "blue", number: 6) , Card(color: "blue", number: 6) , Card(color: "blue", number: 7) , Card(color: "blue", number: 7) , Card(color: "blue", number: 8) , Card(color: "blue", number: 8) , Card(color: "blue", number: 9) , Card(color: "blue", number: 9)]
+//
 
 // لا تقم بإزالة الملاحظات إلا عند وصولك للمطلوب الثالث
 
-//
-//let randomCard = cards.randomElement()!
-//let randomCardImage = UIImage(named: randomCard.imageName())
-//
-//
-//let cardImages = cards.map{UIImage(named: $0.imageName())}
-//randomCardImage
-//cardImages
+
+let randomCard = cards.randomElement()!
+let randomCardImage = UIImage(named: randomCard.imageName())
+
+
+let cardImages = cards.map{UIImage(named: $0.imageName())}
+randomCardImage
+cardImages

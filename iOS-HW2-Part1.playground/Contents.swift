@@ -30,11 +30,33 @@ import UIKit
  #
  اكثر من 40 -> سمنة مفرطه
 */
+var height = 160.6
+var weight = 70.6
+var BMI = 60.5
 
+func BMIcalc(height:Double,weight:Double)
+{
+    BMI = weight / (height*height)
+    
+    if BMI < 18.0
+    {
+        print("ضعيف")
+    }
+    else if BMI > 18.5 && BMI < 30.0
+    {
+        print("وزن طبيعي")
+    }
+    else if BMI > 30.1 && BMI < 40.0
+    {
+        print("سمنة خفيفة")
+    }
+    else if BMI > 40.0
+    {
+        print("سمنة مفرطه")
+    }
+}
 
-
-
-
+BMIcalc(height: 180, weight: 77)
 //: # 2️⃣  السؤال الثاني
 
 /*:
@@ -51,4 +73,19 @@ import UIKit
   #
  و اذا كان فوق ١٨ سوف يتم طباعة نص بأن المتقدم يُسمح له بإمتلاك رخصة قيادة
 */
+var name = "khalifa"
+var age = 17
 
+func driving(name:String , age:Int)
+{
+    if age < 18
+    {
+        print("المتقدم لم يكمل العمر المطلوب")
+    }
+    else if age >= 18
+    {
+    print("المتقدم يسمح له بإمتلاك رخصة قيادة")
+    }
+}
+driving(name: "aziz", age: 17)
+driving(name: "modhaf", age: 20)
